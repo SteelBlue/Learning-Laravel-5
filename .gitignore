@@ -3,12 +3,6 @@ Homestead.yaml
 Homestead.json
 .env
 
-#Ignore config files
-wp-config.php
-
-#Ignore htaccess
-.htaccess
-
 # Ignore docs files
 _gh_pages
 _site
