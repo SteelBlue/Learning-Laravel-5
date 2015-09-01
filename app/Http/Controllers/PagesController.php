@@ -9,7 +9,9 @@ use App\Http\Controllers\Controller;
 
 class PagesController extends Controller
 {
-    //
+    /**
+     *  About Page
+     **/
     public function about()
     {
 
@@ -35,5 +37,13 @@ class PagesController extends Controller
 //            'first' => 'Ryan',
 //            'last' => 'Ebbers'
 //        ]));
+    }
+
+    /**
+     *  Contact Page
+     **/
+    public function contact()
+    {
+        return view('pages.contact');
     }
 }
