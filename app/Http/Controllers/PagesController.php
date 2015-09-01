@@ -18,8 +18,13 @@ class PagesController extends Controller
         /* Pass Variables of Data as 2nd Argument to VIEW (using PHP compact() function) */
         $first = "Ryan";
         $last = "Ebbers";
+        $people = array(
+            'Taylor Otwell',
+            'Dayle Rees',
+            'Eric Barnes'
+        );
 
-        return view('pages.about', compact('first', 'last'));
+        return view('pages.about', compact('first', 'last', 'people'));
 
         /* Pass Array of Data as 2nd Argument to the VIEW */
 //        $data = array(

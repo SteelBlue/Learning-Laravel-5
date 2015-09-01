@@ -19,6 +19,14 @@
             font-family: 'Lato';
         }
 
+        ul {
+            padding-left: 0;
+        }
+
+        ul li {
+            list-style-type: none;
+        }
+
         .container {
             text-align: center;
             display: table-cell;
