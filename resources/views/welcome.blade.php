@@ -44,6 +44,7 @@
                 <div class="title">
                     Laravel 5<br>
                     <a href="/about">About Me</a>
+                    <a href="/contact">Contact Me</a>
                 </div>
             </div>
         </div>
