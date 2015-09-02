@@ -8,7 +8,7 @@ class CarWashStep extends Model
 {
     // Declare Table
     protected $table = 'carwash_steps';
-    
+
     // Which Attributes can be Mass Assigned
     protected $fillable = [
         'order',

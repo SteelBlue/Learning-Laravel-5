@@ -2,8 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ce2b2ca7-7fd1-4d5c-82c2-64cee7401727" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/storage/database.sqlite" afterPath="$PROJECT_DIR$/storage/database.sqlite" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Article.php" afterPath="$PROJECT_DIR$/app/Article.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/CarWashStep.php" afterPath="$PROJECT_DIR$/app/CarWashStep.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="learning-laravel-5.iws" />
@@ -29,8 +28,8 @@
       <file leaf-file-name="CarWashStep.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/CarWashStep.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.17064847">
-              <caret line="10" column="4" selection-start-line="10" selection-start-column="4" selection-end-line="10" selection-end-column="4" />
+            <state vertical-scroll-proportion="0.23890784">
+              <caret line="14" column="20" selection-start-line="14" selection-start-column="20" selection-end-line="14" selection-end-column="20" />
               <folding />
             </state>
           </provider>
@@ -273,7 +272,7 @@
     <property name="options.lastSelected" value="org.jetbrains.plugins.terminal.TerminalOptionsConfigurable" />
     <property name="options.splitter.main.proportions" value="0.3" />
     <property name="options.splitter.details.proportions" value="0.2" />
-    <property name="last_opened_file_path" value="/Applications/MAMP/htdocs/majestic_nfl" />
+    <property name="last_opened_file_path" value="/Applications/MAMP/htdocs/dunn" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
     <property name="settings.editor.splitter.proportion" value="0.2" />
@@ -651,8 +650,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/CarWashStep.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.17064847">
-          <caret line="10" column="4" selection-start-line="10" selection-start-column="4" selection-end-line="10" selection-end-column="4" />
+        <state vertical-scroll-proportion="0.23890784">
+          <caret line="14" column="20" selection-start-line="14" selection-start-column="20" selection-end-line="14" selection-end-column="20" />
           <folding />
         </state>
       </provider>
