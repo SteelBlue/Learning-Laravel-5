@@ -2,7 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
+//use Illuminate\Http\Request;
+use Request;
 
 /**
  *  Import 'Article' CLASS
@@ -12,6 +13,7 @@ use Illuminate\Http\Request;
 use App\Article;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
+use Carbon\Carbon;
 
 class ArticlesController extends Controller
 {
@@ -19,7 +21,10 @@ class ArticlesController extends Controller
     public function index()
     {
         // Fetch All Articles
-        $articles = Article::all();
+//        $articles = Article::all();
+
+        // Fetch ALL Articles in DESC Order
+        $articles = Article::latest('published_at')->get();
 
         return view('articles.index', compact('articles'));
         // Another way to return the view
@@ -71,6 +76,15 @@ class ArticlesController extends Controller
     // STORE ARTICLE
     public function store()
     {
-        return view('articles.index');
+        /**
+         *  Simplest Way - to get POST Data
+         *      - using a fascade
+         **/
+        $input = Request::all();
+        $input['published_at'] = Carbon::now();
+
+        Article::create($input);
+
+        return redirect('articles');
     }
 }

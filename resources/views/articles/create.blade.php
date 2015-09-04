@@ -7,7 +7,7 @@
 
     <hr>
 
-    {!! Form::open() !!}
+    {!! Form::open(['url' => 'articles']) !!}
 
 
         <!-- Title Form Input -->
