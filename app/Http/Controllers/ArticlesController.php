@@ -24,7 +24,10 @@ class ArticlesController extends Controller
 //        $articles = Article::all();
 
         // Fetch ALL Articles in DESC Order
-        $articles = Article::latest('published_at')->get();
+//        $articles = Article::latest('published_at')->get();
+
+        // Fetch ALL Articles in DESC Order, where published-at <= Carbon::now()
+        $articles = Article::latest('published_at')->where('published_at', '<=', Carbon::now())->get();
 
         return view('articles.index', compact('articles'));
         // Another way to return the view
