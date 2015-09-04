@@ -15,8 +15,9 @@ use App\Http\Controllers\Controller;
 
 class ArticlesController extends Controller
 {
-    //
-    public function index() {
+    // SHOW ALL ARTICLES
+    public function index()
+    {
         // Fetch All Articles
         $articles = Article::all();
 
@@ -25,7 +26,10 @@ class ArticlesController extends Controller
         //return view('articles.index')->with('articles', $articles);
     }
 
-    public function show($id) {
+
+    // SHOW SINGLE ARTICLE
+    public function show($id)
+    {
         /**
          *  Better Way to handle NULL
          *      - use ::findOrFail()
@@ -54,5 +58,19 @@ class ArticlesController extends Controller
 
 //        return $article;
         return view('articles.show', compact('article'));
+    }
+
+
+    // CREATE ARTICLE
+    public function create()
+    {
+        return view('articles.create');
+    }
+
+
+    // STORE ARTICLE
+    public function store()
+    {
+        return view('articles.index');
     }
 }
