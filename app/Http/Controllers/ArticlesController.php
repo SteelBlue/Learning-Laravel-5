@@ -75,7 +75,7 @@ class ArticlesController extends Controller
          *          - ex: "2 hours ago"
          **/
 //        dd($article->created_at->diffForHumans());
-        dd($article->published_at);
+//        dd($article->published_at);
 
 //        return $article;
         return view('articles.show', compact('article'));
