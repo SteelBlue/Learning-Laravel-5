@@ -19,6 +19,14 @@
             font-family: 'Lato';
         }
 
+        a {
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
         ul {
             padding-left: 0;
         }
