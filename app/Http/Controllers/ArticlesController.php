@@ -27,7 +27,11 @@ class ArticlesController extends Controller
 //        $articles = Article::latest('published_at')->get();
 
         // Fetch ALL Articles in DESC Order, where published-at <= Carbon::now()
-        $articles = Article::latest('published_at')->where('published_at', '<=', Carbon::now())->get();
+        // This way can be messy, create a query scope for the where clause
+//        $articles = Article::latest('published_at')->where('published_at', '<=', Carbon::now())->get();
+
+        // Fetch ALL Articles in DESC Order, using Query Scope
+        $articles = Article::latest('published_at')->published()->get();
 
         return view('articles.index', compact('articles'));
         // Another way to return the view
@@ -38,13 +42,6 @@ class ArticlesController extends Controller
     // SHOW SINGLE ARTICLE
     public function show($id)
     {
-        /**
-         *  Better Way to handle NULL
-         *      - use ::findOrFail()
-         *      - find the record, or fail
-         **/
-        $article = Article::findOrFail($id);
-
         /**
          *  Manual Way to handle NULL
          *      - there is a better way
@@ -57,12 +54,28 @@ class ArticlesController extends Controller
 //        endif;
 
         /**
+         *  Better Way to handle NULL
+         *      - use ::findOrFail()
+         *      - find the record, or fail
+         **/
+        $article = Article::findOrFail($id);
+
+        /**
          *  Die Dump Function
          *      - similar to var_dump
          *      - able to dive deep into the variable
          *      - stops the function from executing further
          **/
 //        dd($article);
+
+        /**
+         *  Carbon has some great features
+         *      - created_at has a method called diffForHumans()
+         *          - makes it readable for humans
+         *          - ex: "2 hours ago"
+         **/
+//        dd($article->created_at->diffForHumans());
+        dd($article->published_at);
 
 //        return $article;
         return view('articles.show', compact('article'));
