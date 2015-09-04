@@ -12,7 +12,17 @@
 
             <h2>
 
-                <a href="#">{{ $article->title }}</a>
+                {{--
+                    Use the action() helper method to display links
+                        - pass the controller, then any parameters needed by that controller
+                --}}
+                {{--<a href="{{ action('ArticlesController@show', [$article->id])  }}">{{ $article->title }}</a>--}}
+
+                {{--
+                    Use the url() function
+                        - pass the extension, then any additional segements
+                --}}
+                <a href="{{ url('/articles', $article->id) }}">{{ $article->title }}</a>
 
             </h2>
 

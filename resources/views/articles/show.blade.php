@@ -6,10 +6,16 @@
 
     <hr style="width:50%;">
 
-        <article>
+    <article>
 
-            {{ $article->body }}
+        {{ $article->body }}
 
-        </article>
+    </article>
+
+    <aside style="margin-top: 50px;">
+
+        <a href="{{ action('ArticlesController@index')  }}">Back to Articles</a>
+
+    </aside>
 
 @stop
