@@ -4,6 +4,8 @@
 
     <h1>Articles</h1>
 
+    <a href="{{ action('ArticlesController@create') }}">Create New Article</a>
+
     <hr style="width:50%;">
 
     @foreach ($articles as $article)
