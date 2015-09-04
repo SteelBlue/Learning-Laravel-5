@@ -80,10 +80,15 @@ class ArticlesController extends Controller
          *  Simplest Way - to get POST Data
          *      - using a fascade
          **/
-        $input = Request::all();
-        $input['published_at'] = Carbon::now();
+//        $input = Request::all();
+//        $input['published_at'] = Carbon::now();
+//
+//        Article::create($input);
 
-        Article::create($input);
+        /**
+         *  Create Article using inline Request
+         **/
+        Article::create( Request::all() );
 
         return redirect('articles');
     }

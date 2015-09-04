@@ -14,4 +14,16 @@ class Article extends Model
         'published_at'
     ];
 
+    // setNameAttribute (naming convention)
+    // example:  setAddressAttribute
+
+    // Set Published-At Attribute to include H:m:s
+    public function setPublishedAtAttribute($date)
+    {
+        $this->attributes['published_at'] = Carbon::createFromFormat('Y-m-d', $date);
+
+        // use Carbon::parse() to set the time to midnight
+//        $this->attributes['published_at'] = Carbon::parse($date);
+    }
+
 }
