@@ -25,9 +25,34 @@ class ArticlesController extends Controller
         //return view('articles.index')->with('articles', $articles);
     }
 
-//    public function show($id) {
+    public function show($id) {
+        /**
+         *  Better Way to handle NULL
+         *      - use ::findOrFail()
+         *      - find the record, or fail
+         **/
+        $article = Article::findOrFail($id);
+
+        /**
+         *  Manual Way to handle NULL
+         *      - there is a better way
+         **/
 //        $article = Article::find($id);
 //
-//        return view('articles.show', compact('article'));
-//    }
+//        if ( is_null($article) ) :
+//            // Abort and show 404 Page
+//            abort(404);
+//        endif;
+
+        /**
+         *  Die Dump Function
+         *      - similar to var_dump
+         *      - able to dive deep into the variable
+         *      - stops the function from executing further
+         **/
+//        dd($article);
+
+//        return $article;
+        return view('articles.show', compact('article'));
+    }
 }
