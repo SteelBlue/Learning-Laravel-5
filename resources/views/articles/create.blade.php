@@ -23,10 +23,10 @@
 
             {!! Form::label('body', 'Body') !!}
             {!! Form::textarea('body', null, ['class' => 'form-control']) !!}
-O
+
         </div>
 
-        <!-- -->
+        <!-- Published At Input -->
         <div class="form-group">
 
             {!! Form::label('published_at', 'Publish On') !!}

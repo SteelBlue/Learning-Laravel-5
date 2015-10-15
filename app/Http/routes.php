@@ -28,11 +28,11 @@ Route::get('contact', 'PagesController@contact');
 // Articles
 
 Route::get('articles', 'ArticlesController@index');
-
 Route::get('articles/create', 'ArticlesController@create');
 // always put wild card {} urls last
 Route::get('articles/{id}', 'ArticlesController@show');
 
+// Respond to POST Request
 Route::post('articles', 'ArticlesController@store');
 
 
