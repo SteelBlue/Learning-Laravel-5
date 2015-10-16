@@ -11,14 +11,19 @@ namespace App\Http\Controllers;
 use App\Article;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
+use App\Http\Requests\CreateArticleRequest;
 use Carbon\Carbon;
 //use Illuminate\Http\Request;
-use Request;
+//use Request;
 
 
 class ArticlesController extends Controller
 {
-    // SHOW ALL ARTICLES
+    /**
+     * Show all articles.
+     *
+     * @return Response
+     **/
     public function index()
     {
         // Fetch All Articles
@@ -40,7 +45,12 @@ class ArticlesController extends Controller
     }
 
 
-    // SHOW SINGLE ARTICLE
+    /**
+     * Show a single article
+     *
+     * @param integer $id
+     * @return Response
+     **/
     public function show($id)
     {
         /**
@@ -83,16 +93,33 @@ class ArticlesController extends Controller
     }
 
 
-    // CREATE ARTICLE
+    /**
+     * Show the page to create a new article
+     *
+     * @return Reponse
+     **/
     public function create()
     {
         return view('articles.create');
     }
 
 
-    // STORE ARTICLE
-    public function store()
+    /**
+     * Save a new article
+     *
+     * @param CreateArticleRequest $request
+     * @return Response
+     **/
+    public function store(CreateArticleRequest $request)
     {
+        /**
+         * Validation
+         * Done with (CreateArticleRequest $request)
+         *
+         * Performed before the body of this function is run
+         * MUST pass validation, BEFORE running function's body
+         **/
+
         /**
          *  Simplest Way - to get POST Data
          *      - using a fascade
@@ -105,7 +132,12 @@ class ArticlesController extends Controller
         /**
          *  Create Article using inline Request
          **/
-        Article::create( Request::all() );
+//        Article::create( Request::all() );
+
+        /**
+         *  Create Article using Validation
+         **/
+        Article::create( $request->all() );
 
         return redirect('articles');
     }

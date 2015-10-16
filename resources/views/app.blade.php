@@ -41,6 +41,10 @@
             margin-top: 20px;
         }
 
+        pre {
+            text-align: left;
+        }
+
         .container {
             text-align: center;
             /*display: table-cell;*/
