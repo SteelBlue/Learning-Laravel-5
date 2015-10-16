@@ -18,7 +18,7 @@
 /**
  *  Route::get('url_extension', 'ControllerName@methodName');
  **/
-
+Route::get('/', 'PagesController@index');
 Route::get('about', 'PagesController@about');
 Route::get('contact', 'PagesController@contact');
 

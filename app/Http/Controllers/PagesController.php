@@ -10,6 +10,14 @@ use App\Http\Controllers\Controller;
 class PagesController extends Controller
 {
     /**
+     *  Index Page
+     **/
+    public function index()
+    {
+        return view('welcome');
+    }
+
+    /**
      *  About Page
      **/
     public function about()
