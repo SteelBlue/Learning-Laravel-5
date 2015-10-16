@@ -16,4 +16,10 @@
 
     @include ('errors.list')
 
+    <aside style="margin-top: 50px;">
+
+        <a href="{{ action('ArticlesController@index')  }}">Back to Articles</a>
+
+    </aside>
+
 @stop

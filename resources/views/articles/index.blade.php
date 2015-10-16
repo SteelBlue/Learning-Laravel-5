@@ -34,7 +34,11 @@
                 {{ $article->body }}
             </div>
 
+            <a href="{{ action('ArticlesController@edit', $article->id) }}">Edit</a>
+
         </article>
+
+        <hr style="width:25%;">
 
     @endforeach
 
