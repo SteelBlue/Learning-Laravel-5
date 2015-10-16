@@ -10,20 +10,26 @@ use App\Http\Controllers\Controller;
 class PagesController extends Controller
 {
     /**
-     *  Index Page
-     **/
+     * Index Page
+     *
+     * @return \Illuminate\View\View
+     */
     public function index()
     {
         return view('welcome');
     }
 
+
     /**
-     *  About Page
-     **/
+     * About Page
+     *
+     * @return \Illuminate\View\View
+     */
     public function about()
     {
-
-        /* Pass Variables of Data as 2nd Argument to VIEW (using PHP compact() function) */
+        /**
+         * Pass Variables of Data as 2nd Argument to VIEW (using PHP compact() function)
+         **/
         $first = "Ryan";
         $last = "Ebbers";
         $people = array(
@@ -33,28 +39,14 @@ class PagesController extends Controller
         );
 
         return view('pages.about', compact('first', 'last', 'people'));
-
-        /* Pass Array of Data as 2nd Argument to the VIEW */
-//        $data = array(
-//            'first' => 'Ryan',
-//            'last' => 'Ebbers'
-//        );
-//        return view('pages.about', $data);
-
-        /* Pass a Variable of Data to the VIEW */
-//        $name = "Ryan <span style=\"color:red;\">Ebbers</span>";
-//        return view('pages.about')->with('name', $name);
-
-        /* Pass Array of Data to the VIEW */
-//        return view('pages.about')->with(([
-//            'first' => 'Ryan',
-//            'last' => 'Ebbers'
-//        ]));
     }
 
+
     /**
-     *  Contact Page
-     **/
+     * Contact Page
+     *
+     * @return \Illuminate\View\View
+     */
     public function contact()
     {
         return view('pages.contact');

@@ -11,9 +11,6 @@
 |
 */
 
-//Route::get('/', function() {
-//    return view('welcome');
-//});
 
 /**
  *  Route::get('url_extension', 'ControllerName@methodName');
@@ -27,26 +24,4 @@ Route::get('contact', 'PagesController@contact');
 /**
  * Articles
  **/
-// Manual Way to Set-Up Routes
-    //Route::get('articles', 'ArticlesController@index');
-    //Route::get('articles/create', 'ArticlesController@create');
-    //Route::get('articles/{id}', 'ArticlesController@show'); // always put wild card {} urls last
-    //Route::post('articles', 'ArticlesController@store'); // Respond to POST Request
-    //Route::get('articles/{id}/edit', 'ArticlesController@edit');
-// Using Route Resource
 Route::resource('articles', 'ArticlesController');
-
-
-
-
-
-
-/**
- *  This is another way to register a route
- *      - useful for small quick things
- *      - convenient for APIs
- *  Above approach is the preferred method of registering a route
- **/
-//Route::get('foo', function() {
-//    return 'Bar';
-//});
