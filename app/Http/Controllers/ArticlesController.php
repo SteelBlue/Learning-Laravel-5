@@ -13,6 +13,7 @@ use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\CreateArticleRequest;
 use Carbon\Carbon;
+
 //use Illuminate\Http\Request;
 //use Request;
 
@@ -113,12 +114,21 @@ class ArticlesController extends Controller
     public function store(CreateArticleRequest $request)
     {
         /**
-         * Validation
+         * Validation - FORMALLY - NEW STYLE USED NOW
          * Done with (CreateArticleRequest $request)
          *
          * Performed before the body of this function is run
          * MUST pass validation, BEFORE running function's body
          **/
+
+        /**
+         * Validation - Another way to validate
+         *
+         * Call validation directly on the Controller
+         * Pass the Request
+         * Pass the Validation Rules
+         **/
+//        $this->validate( $request, ['title'=>'required', 'body'=>'required'] );
 
         /**
          *  Simplest Way - to get POST Data
