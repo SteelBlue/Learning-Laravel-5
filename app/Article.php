@@ -8,44 +8,85 @@ use Carbon\Carbon;
 class Article extends Model
 {
 
-    // Which Attributes can be Mass Assigned
+    /**
+     * The attributes that are mass assignable.
+     *
+     * @var array
+     **/
     protected $fillable = [
         'title',
         'body',
         'published_at'
     ];
 
-    // Make Laravel treat dates as Carbon instance
-    // Visit Model to dig deeper getDates() method
+
+    /**
+     * Treat $dates as a Carbon instance
+     *      Visit Model to dig deeper getDates() method
+     *
+     * @var array
+     */
     protected $dates = ['published_at'];
 
-    // scopeName (nameing convention)
-    // example:  scopeRedCar
 
-    // Query Scope
-    // Get Articles, WHERE published_at <= now
+     /**
+      * scopeName (nameing convention)
+      * example:  scopeRedCar
+      **/
+
+
+    /**
+     * Scope queries to articles that have been published.
+     *      Get Articles, WHERE published_at <= now
+     *
+     * @param $query
+     */
     public function scopePublished($query)
     {
         $query->where( 'published_at', '<=', Carbon::now() );
     }
 
-    // Get Articles, WHERE published_at >= now
+
+    /**
+     * Scope queries to articles that have not been published.
+     *      Get Articles, WHERE published_at >= now
+     *
+     * @param $query
+     **/
     public function scopeUnpublished($query)
     {
         $query->where( 'published_at', '>=', Carbon::now() );
     }
 
 
-    // setNameAttribute (naming convention)
-    // example:  setAddressAttribute
-
-    // Set Published-At Attribute to include H:m:s
+    /**
+     * Set the published_at attribute.
+     *      setNameAttribute (naming convention)
+     *      example:  setAddressAttribute
+     *
+     *      Set Published-At Attribute to include H:m:s
+     *
+     * @param $date
+     **/
     public function setPublishedAtAttribute($date)
     {
         $this->attributes['published_at'] = Carbon::createFromFormat('Y-m-d', $date);
 
+/*
         // use Carbon::parse() to set the time to midnight
-//        $this->attributes['published_at'] = Carbon::parse($date);
+        $this->attributes['published_at'] = Carbon::parse($date);
+*/
+    }
+
+
+    /**
+     * An article is owned by a user.
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     */
+    public function user()
+    {
+        return $this->belongsTo('App\User');
     }
 
 }
