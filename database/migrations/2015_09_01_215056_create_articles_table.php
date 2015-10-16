@@ -15,10 +15,17 @@ class CreateArticlesTable extends Migration
         Schema::create('articles', function (Blueprint $table)
         {
             $table->increments('id');
+            $table->integer('user_id')->unsigned(); // unsigned(), means must be positive integer
             $table->string('title');
             $table->text('body');
             $table->timestamps();
             $table->timestamp('published_at');
+
+            // Foreign Key For User
+            $table->foreign('user_id')
+                  ->references('id')
+                  ->on('users')
+                  ->onDelete('cascade');
         });
     }
 

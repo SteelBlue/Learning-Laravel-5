@@ -16,7 +16,8 @@ class Article extends Model
     protected $fillable = [
         'title',
         'body',
-        'published_at'
+        'published_at',
+        'user_id',  // temporary
     ];
 
 
@@ -88,5 +89,8 @@ class Article extends Model
     {
         return $this->belongsTo('App\User');
     }
+
+
+    
 
 }
