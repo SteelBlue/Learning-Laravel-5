@@ -11,31 +11,30 @@
 |
 */
 
-Route::get('/', function() {
-    return view('welcome');
-});
+//Route::get('/', function() {
+//    return view('welcome');
+//});
 
 /**
  *  Route::get('url_extension', 'ControllerName@methodName');
  **/
 
 Route::get('about', 'PagesController@about');
-
 Route::get('contact', 'PagesController@contact');
 
 
 
-// Articles
-
-Route::get('articles', 'ArticlesController@index');
-Route::get('articles/create', 'ArticlesController@create');
-// always put wild card {} urls last
-Route::get('articles/{id}', 'ArticlesController@show');
-
-// Respond to POST Request
-Route::post('articles', 'ArticlesController@store');
-
-
+/**
+ * Articles
+ **/
+// Manual Way to Set-Up Routes
+    //Route::get('articles', 'ArticlesController@index');
+    //Route::get('articles/create', 'ArticlesController@create');
+    //Route::get('articles/{id}', 'ArticlesController@show'); // always put wild card {} urls last
+    //Route::post('articles', 'ArticlesController@store'); // Respond to POST Request
+    //Route::get('articles/{id}/edit', 'ArticlesController@edit');
+// Using Route Resource
+Route::resource('articles', 'ArticlesController');
 
 
 

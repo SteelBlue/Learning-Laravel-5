@@ -3,11 +3,11 @@
 
 @section('content')
 
-    <h1>Write New Article</h1>
+    <h1>Edit: {!! $article->title !!}</h1>
 
     <hr>
 
-    {!! Form::open(['url' => 'articles']) !!}
+    {!! Form::model($article, [ 'method' => 'PATCH', 'action' => ['ArticlesController@update', $article->id] ]) !!}
 
 
         <!-- Title Form Input -->
@@ -44,6 +44,6 @@
     {!! Form::close() !!}
 
 
-    @include('errors.list')
+    @include('errors.list');
 
 @stop

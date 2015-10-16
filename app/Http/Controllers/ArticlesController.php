@@ -11,10 +11,9 @@ namespace App\Http\Controllers;
 use App\Article;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
-use App\Http\Requests\CreateArticleRequest;
+use App\Http\Requests\ArticleRequest;
 use Carbon\Carbon;
-
-//use Illuminate\Http\Request;
+use Illuminate\Http\Request;
 //use Request;
 
 
@@ -111,7 +110,7 @@ class ArticlesController extends Controller
      * @param CreateArticleRequest $request
      * @return Response
      **/
-    public function store(CreateArticleRequest $request)
+    public function store(ArticleRequest $request)
     {
         /**
          * Validation - FORMALLY - NEW STYLE USED NOW
@@ -148,6 +147,36 @@ class ArticlesController extends Controller
          *  Create Article using Validation
          **/
         Article::create( $request->all() );
+
+        return redirect('articles');
+    }
+
+
+    /**
+     * Edit an Article
+     *
+     * @param $id
+     * @return Reponse
+     **/
+    public function edit( $id )
+    {
+        $article = Article::findOrFail( $id );
+
+        return view('articles.edit', compact( 'article' ));
+    }
+
+
+    /**
+     * Update an Article
+     *
+     * @param $id, ArticleRequest $request
+     * @return Response
+     **/
+    public function update( $id, ArticleRequest $request )
+    {
+        $article = Article::findOrFail( $id );
+
+        $article->update( $request->all() );
 
         return redirect('articles');
     }
