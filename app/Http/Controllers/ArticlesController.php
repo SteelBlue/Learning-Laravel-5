@@ -41,7 +41,7 @@ class ArticlesController extends Controller
         /**
          * Apply Auth Middleware to all routes/methods EXCEPT index()
          **/
-        $this->middleware('auth', ['except'=>'index']);
+        $this->middleware('auth', ['except' => ['index', 'show']]);
     }
 
     /**
@@ -94,10 +94,10 @@ class ArticlesController extends Controller
     /**
      * Show a single article
      *
-     * @param integer $id
+     * @param Article $article
      * @return Response
      **/
-    public function show($id)
+    public function show($article)
     {
         /**
          *  Manual Way to handle NULL
@@ -115,8 +115,10 @@ class ArticlesController extends Controller
          *  Better Way to handle NULL
          *      - use ::findOrFail()
          *      - find the record, or fail
+         *  Used this method when $id was passed through
+
+//        $article = Article::findOrFail($id);
          **/
-        $article = Article::findOrFail($id);
 
         /**
          *  Die Dump Function
@@ -214,12 +216,12 @@ class ArticlesController extends Controller
     /**
      * Edit an Article
      *
-     * @param $id
+     * @param Article $article
      * @return Reponse
      **/
-    public function edit( $id )
+    public function edit( $article )
     {
-        $article = Article::findOrFail( $id );
+//        $article = Article::findOrFail( $id );
 
         return view('articles.edit', compact( 'article' ));
     }
@@ -228,12 +230,12 @@ class ArticlesController extends Controller
     /**
      * Update an Article
      *
-     * @param $id, ArticleRequest $request
+     * @param Article $article, ArticleRequest $request
      * @return Response
      **/
-    public function update( $id, ArticleRequest $request )
+    public function update( $article, ArticleRequest $request )
     {
-        $article = Article::findOrFail( $id );
+//        $article = Article::findOrFail( $id );
 
         $article->update( $request->all() );
 
