@@ -180,7 +180,7 @@ class ArticlesController extends Controller
          **/
         $article = new Article( $request->all() );
 
-        Auth::user()->articles()->save($article);
+        \Auth::user()->articles()->save($article);
 
         return redirect('articles');
     }
