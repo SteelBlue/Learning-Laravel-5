@@ -1,7 +1,3 @@
-{{-- Temporary--}}
-{!! Form::hidden('user_id', 1) !!}
-
-
 <!-- Title Form Input -->
 <div class="form-group">
 

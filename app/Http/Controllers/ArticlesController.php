@@ -52,6 +52,12 @@ class ArticlesController extends Controller
          **/
 
         /**
+         * Get Current User
+
+//        return \Auth::user();
+         **/
+
+        /**
          * Fetch ALL Articles in DESC Order, using Query Scope
          **/
         $articles = Article::latest('published_at')->published()->get();
@@ -165,8 +171,16 @@ class ArticlesController extends Controller
 
         /**
          *  Create Article using Validation
+
+//        Article::create( $request->all() );
          **/
-        Article::create( $request->all() );
+
+        /**
+         * Create Article, with Validation, and User ID
+         **/
+        $article = new Article( $request->all() );
+
+        Auth::user()->articles()->save($article);
 
         return redirect('articles');
     }
