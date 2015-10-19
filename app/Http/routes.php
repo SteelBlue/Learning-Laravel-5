@@ -18,6 +18,12 @@
 /**
  *  Route::get('url_extension', 'ControllerName@methodName');
  **/
+
+
+
+/**
+ * Pages
+ **/
 Route::get('/', 'PagesController@index');
 Route::get('about', 'PagesController@about');
 Route::get('contact', 'PagesController@contact');
@@ -36,6 +42,16 @@ Route::get('contact', 'PagesController@contact');
 // Using Route Resource
 Route::resource('articles', 'ArticlesController');
 
+
+
+
+/**
+ * Auth
+ **/
+Route::controllers([
+    'auth' => 'Auth\AuthController',
+    'password' => 'Auth\PasswordController',
+]);
 
 
 
