@@ -17,7 +17,6 @@ class Article extends Model
         'title',
         'body',
         'published_at',
-        'user_id',  // temporary
     ];
 
 
@@ -89,8 +88,5 @@ class Article extends Model
     {
         return $this->belongsTo('App\User');
     }
-
-
-    
 
 }
