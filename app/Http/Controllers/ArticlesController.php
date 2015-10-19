@@ -19,6 +19,29 @@ use Illuminate\Http\Request;
 
 class ArticlesController extends Controller
 {
+
+    /**
+     * Constructor
+     **/
+    public function __construct()
+    {
+        // Trigger Authenticate Middleware
+        /**
+         * Apply Auth Middleware to all routes/methods
+         **/
+//        $this->middleware('auth');
+
+        /**
+         * Apply Auth Middleware to ONLY create()
+         **/
+//        $this->middleware('auth', ['only'=>'create']);
+
+        /**
+         * Apply Auth Middleware to all routes/methods EXCEPT index()
+         **/
+        $this->middleware('auth', ['except'=>'index']);
+    }
+
     /**
      * Show all articles.
      *
