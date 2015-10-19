@@ -56,6 +56,14 @@ Route::controllers([
 
 
 
+/**
+ * Example Use of Custom Route Middleware
+ **/
+Route::get('foo', ['middleware' => 'manager', function()
+{
+    return 'this page may only be viewed by managers';
+}]);
+
 
 /**
  *  This is another way to register a route

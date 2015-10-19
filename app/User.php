@@ -47,4 +47,15 @@ class User extends Model implements AuthenticatableContract,
     {
         return $this->hasMany('App\Article');
     }
+
+
+    /**
+     * Test if user is a team manager.
+     *
+     * @return bool
+     */
+    public function isATeamManager()
+    {
+        return true;
+    }
 }

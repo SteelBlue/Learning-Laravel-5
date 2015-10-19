@@ -18,6 +18,8 @@ class Kernel extends HttpKernel
         \Illuminate\Session\Middleware\StartSession::class,
         \Illuminate\View\Middleware\ShareErrorsFromSession::class,
         \App\Http\Middleware\VerifyCsrfToken::class,
+        // Custom Middleware
+//        \App\Http\Middleware\Demo::class,
     ];
 
     /**
@@ -29,5 +31,8 @@ class Kernel extends HttpKernel
         'auth' => \App\Http\Middleware\Authenticate::class,
         'auth.basic' => \Illuminate\Auth\Middleware\AuthenticateWithBasicAuth::class,
         'guest' => \App\Http\Middleware\RedirectIfAuthenticated::class,
+        // Custom Route Middleware
+//        'demo' => \App\Http\Middleware\Demo::class,
+        'manager' => \App\Http\Middleware\RedirectIfNotAManager::class,
     ];
 }
