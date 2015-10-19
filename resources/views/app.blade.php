@@ -3,7 +3,7 @@
 <head>
     <title>Laravel</title>
 
-    <link href="https://fonts.googleapis.com/css?family=Lato:100" rel="stylesheet" type="text/css">
+    <link href='https://fonts.googleapis.com/css?family=Lato:400,300,100,700,900' rel='stylesheet' type='text/css'>
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet" type="text/css">
 
     <style>
@@ -16,7 +16,6 @@
             padding: 0;
             width: 100%;
             display: table;
-            font-weight: 100;
             font-family: 'Lato';
         }
 
@@ -38,7 +37,7 @@
 
         label {
             display: block;
-            margin-top: 20px;
+            /*margin-top: 20px;*/
         }
 
         pre {
