@@ -97,7 +97,7 @@ class ArticlesController extends Controller
      * @param Article $article
      * @return Response
      **/
-    public function show($article)
+    public function show( Article $article )
     {
         /**
          *  Manual Way to handle NULL
@@ -219,7 +219,7 @@ class ArticlesController extends Controller
      * @param Article $article
      * @return Reponse
      **/
-    public function edit( $article )
+    public function edit( Article $article )
     {
 //        $article = Article::findOrFail( $id );
 
@@ -233,7 +233,7 @@ class ArticlesController extends Controller
      * @param Article $article, ArticleRequest $request
      * @return Response
      **/
-    public function update( $article, ArticleRequest $request )
+    public function update( Article $article, ArticleRequest $request )
     {
 //        $article = Article::findOrFail( $id );
 

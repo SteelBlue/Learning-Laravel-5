@@ -29,7 +29,14 @@ class RouteServiceProvider extends ServiceProvider
         parent::boot($router);
 
         // Enable Route Model Binding
-        $router->model('articles', 'App\Article');
+        $router->model('articles', 'App\Article');  // find using {wildcard}
+
+        // Enable Route Model Binding
+//        $router->bind('articles', function($id)
+//        {
+//            // Custom Logic
+//            return \App\Article::published()->FindOrFail($id);
+//        });
     }
 
     /**
