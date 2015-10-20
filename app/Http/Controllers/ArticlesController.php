@@ -315,7 +315,15 @@ class ArticlesController extends Controller
     {
 //        $article = Article::findOrFail( $id );
 
+        /**
+         * Update Article Content
+         **/
         $article->update( $request->all() );
+
+        /**
+         * Sync Article Tags
+         **/
+        $article->tags()->sync( $request->input('tag_list') );
 
         return redirect('articles');
     }
