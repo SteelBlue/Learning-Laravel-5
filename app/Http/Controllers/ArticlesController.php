@@ -299,6 +299,9 @@ class ArticlesController extends Controller
     {
 //        $article = Article::findOrFail( $id );
 
+        /**
+         * Get List of Tags
+         **/
         $tags = Tag::lists('name', 'id');
 
         return view('articles.edit', compact( 'article', 'tags' ));
@@ -316,12 +319,12 @@ class ArticlesController extends Controller
 //        $article = Article::findOrFail( $id );
 
         /**
-         * Update Article Content
+         * Update Article Model
          **/
         $article->update( $request->all() );
 
         /**
-         * Sync Article Tags
+         * Sync Tag Model
          **/
         $article->tags()->sync( $request->input('tag_list') );
 
