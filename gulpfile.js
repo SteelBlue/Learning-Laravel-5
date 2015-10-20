@@ -37,17 +37,31 @@ elixir(function(mix) {
      **/
     //mix.phpUnit().phpSpec();
 
+
+
     /**
      * Versioning of Files
      **/
-    mix.sass('app.scss');
+    mix.sass('app.scss', 'resources/assets/css');
 
     mix.styles([
-        'vendor/normalize.css',
+        'libs/bootstrap.min.css',
+        'libs/select2.min.css',
         'app.css'
-    ], null, 'public/css');
+    ], null, 'resources/assets/css');
 
     // Leverage Cache Busting
     mix.version('public/css/all.css');
+
+    /**
+     * Merging and Versioning of Scripts
+     **/
+    mix.scripts([
+        'libs/jquery.js',
+        'libs/bootstrap.min.js',
+        'libs/select2.min.js'
+    ], null, 'resources/assets/js');
+
+    mix.version('public/js/all.js');
 
 });
