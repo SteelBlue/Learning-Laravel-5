@@ -167,7 +167,7 @@ class ArticlesController extends Controller
     public function store(ArticleRequest $request)
     {
 
-        dd($request->input('tags'));
+//        dd($request->input('tags'));
 
         /**
          * Validation - FORMALLY - NEW STYLE USED NOW
@@ -222,13 +222,24 @@ class ArticlesController extends Controller
          * Create Article, with Validation, and User ID
          *      Using the create() method
          **/
-        Auth::user()->articles()->create( $request->all() );
-
+        $article = Auth::user()->articles()->create( $request->all() );
 
         /**
          * Get Tags associated with the article.
+
+//        $tagIds = $request->input('tags');
          **/
-        $tags = $request->input('tags');
+
+        /**
+         * Attach TagIds to the article.
+
+//        $article->tags->attach( $tagIds );
+         **/
+
+        /**
+         * Inline attach TagIds to the article.
+         **/
+        $article->tags->attach( $request->input('tags') );
 
         /**
          * Create Flash Message
