@@ -10,9 +10,11 @@
 </head>
 <body>
 
-@include('partials.user_tab')
+
 
 <div class="container">
+
+    @include('partials.user_tab')
 
     @include('flash::message')
 
