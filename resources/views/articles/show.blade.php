@@ -38,6 +38,10 @@
 
     <aside style="margin-top: 50px;">
 
+        <h4>
+            <a href="{{ action('ArticlesController@edit', $article->id) }}">Edit this Article</a>
+        </h4>
+
         <a href="{{ action('ArticlesController@index')  }}">Back to Articles</a>
 
     </aside>

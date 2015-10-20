@@ -18,6 +18,10 @@
 
     <aside style="margin-top: 50px;">
 
+        <h4>
+            <a href="{{ action('ArticlesController@show', $article->id)  }}">Return to Your Article</a>
+        </h4>
+
         <a href="{{ action('ArticlesController@index')  }}">Back to Articles</a>
 
     </aside>
