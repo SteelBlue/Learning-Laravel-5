@@ -42,7 +42,15 @@
 
     <script>
         $('#tag_list').select2({
-            placeholder: 'Choose your tag(s)'
+            placeholder: 'Choose your tag(s)',
+            tags: true, // allows custom tags to be created
+//            ajax: {
+//                dataType: 'json',   // return User::all();
+//                url: 'tags.json',   // will look in the /public/ directory for tags.json
+//                processResults: function(data) {
+//                    return { results: data }
+//                },
+//            },
         });
     </script>
 
