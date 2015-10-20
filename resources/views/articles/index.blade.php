@@ -2,8 +2,6 @@
 
 @section('content')
 
-    <a href="/" style="font-weight:bold;">Home</a>
-
     <h1>Articles</h1>
 
     <a href="{{ action('ArticlesController@create') }}">Create New Article</a>

@@ -16,6 +16,8 @@
 
     @include('partials.user_tab')
 
+    @include('partials.nav')
+
     @include('flash::message')
 
     @yield('content')
