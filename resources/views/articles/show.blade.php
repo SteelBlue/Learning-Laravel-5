@@ -12,6 +12,30 @@
 
     </article>
 
+    <hr>
+
+    @unless ( $article->tags->isEmpty() )
+
+        <aside class="tags">
+
+            <h3>Tags</h3>
+
+            <ul>
+
+                @foreach ( $article->tags as $tag )
+
+                    <li>{{ $tag->name }}</li>
+
+                @endforeach
+
+            </ul>
+
+        </aside>
+
+        <hr>
+
+    @endunless
+
     <aside style="margin-top: 50px;">
 
         <a href="{{ action('ArticlesController@index')  }}">Back to Articles</a>

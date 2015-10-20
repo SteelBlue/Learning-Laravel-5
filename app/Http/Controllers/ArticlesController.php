@@ -239,7 +239,7 @@ class ArticlesController extends Controller
         /**
          * Inline attach TagIds to the article.
          **/
-        $article->tags()->attach( $request->input('tags') );
+        $article->tags()->attach( $request->input('tag_list') );
 
         /**
          * Create Flash Message
@@ -299,7 +299,9 @@ class ArticlesController extends Controller
     {
 //        $article = Article::findOrFail( $id );
 
-        return view('articles.edit', compact( 'article' ));
+        $tags = Tag::lists('name', 'id');
+
+        return view('articles.edit', compact( 'article', 'tags' ));
     }
 
 
