@@ -12,6 +12,7 @@ use App\Article;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\ArticleRequest;
+use App\Tag;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -151,7 +152,9 @@ class ArticlesController extends Controller
      **/
     public function create()
     {
-        return view('articles.create');
+        $tags = Tag::lists('name', 'id');
+
+        return view('articles.create', compact('tags'));
     }
 
 
@@ -163,6 +166,9 @@ class ArticlesController extends Controller
      **/
     public function store(ArticleRequest $request)
     {
+
+        dd($request->input('tags'));
+
         /**
          * Validation - FORMALLY - NEW STYLE USED NOW
          * Done with (CreateArticleRequest $request)
@@ -217,6 +223,12 @@ class ArticlesController extends Controller
          *      Using the create() method
          **/
         Auth::user()->articles()->create( $request->all() );
+
+
+        /**
+         * Get Tags associated with the article.
+         **/
+        $tags = $request->input('tags');
 
         /**
          * Create Flash Message

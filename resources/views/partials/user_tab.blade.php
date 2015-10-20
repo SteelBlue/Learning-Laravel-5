@@ -10,3 +10,5 @@
         <a href="/auth/register">Register</a>
     </div>
 @endif
+
+<hr>
