@@ -2,9 +2,8 @@ html, body {
   height: 100%; }
 
 body {
-  margin: 0;
+  margin: 0 auto;
   padding: 0;
-  width: 100%;
   display: table;
   font-family: 'Lato';
   font-weight: 300; }
