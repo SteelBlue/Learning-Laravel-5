@@ -15,6 +15,7 @@ use App\Http\Requests\ArticleRequest;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Session;
 
 //use Request;
 
@@ -204,11 +205,63 @@ class ArticlesController extends Controller
 
         /**
          * Create Article, with Validation, and User ID
+         *      Using the save() method
+
+//        $article = new Article( $request->all() );
+//
+//        Auth::user()->articles()->save($article);
          **/
-        $article = new Article( $request->all() );
 
-        Auth::user()->articles()->save($article);
+        /**
+         * Create Article, with Validation, and User ID
+         *      Using the create() method
+         **/
+        Auth::user()->articles()->create( $request->all() );
 
+        /**
+         * Create Flash Message
+
+//        Session::flash('flash_message', 'Your article has been created!');
+         **/
+
+        /**
+         * Create Flash Message using Session Helper
+
+//        session()->flash('flash_message', 'Your article has been created!');
+//        session()->flash('flash_message_important', true);
+//
+//        return redirect('articles');
+         **/
+
+        /**
+         * Create Article with a Flash Message
+
+//        return redirect('articles')->with([
+//            'flash_message' => 'Your article has been created!',
+//            'flash_message_important' => true
+//        ]);
+         **/
+
+        /**
+         * Create Flash Message with function
+
+//        flash('Your article has been created!');
+         **/
+
+        /**
+         * Create Flash SUCCESS Message with function
+
+//        flash()->success('Your article has been created!');
+         **/
+
+        /**
+         * Create Flash OVERLAY Message with function
+         **/
+        flash()->overlay('Your article has been created!', 'Good Job');
+
+        /**
+         * Return Redirect to 'articles'
+         **/
         return redirect('articles');
     }
 

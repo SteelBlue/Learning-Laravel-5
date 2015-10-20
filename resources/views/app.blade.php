@@ -10,11 +10,38 @@
 </head>
 <body>
 
+@if ( Auth::check() )
+    <div class="user_info">
+        <h5>Welcome, {!!  Auth::user()->name !!}</h5>
+        <a href="/auth/logout">Logout</a>
+    </div>
+@else
+    <div class="user_info">
+        <h5>Welcome</h5>
+        <a href="/auth/login">Login</a><br>
+        <a href="/auth/register">Register</a>
+    </div>
+@endif
+
 <div class="container">
+
+    @include('flash::message')
 
     @yield('content')
 
 </div>
+
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="//code.jquery.com/jquery.js"></script>
+<!-- Latest compiled and minified JavaScript -->
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+
+<script>
+
+    $('#flash-overlay-modal').modal();
+
+//    $('div.alert').not('.alert-important').delay(3000).slideUp(300);
+</script>
 
 @yield('footer')
 
