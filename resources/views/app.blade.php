@@ -5,7 +5,8 @@
 
     <link href='https://fonts.googleapis.com/css?family=Lato:400,300,100,700,900' rel='stylesheet' type='text/css'>
 
-    <link href="{{ elixir('css/all.css') }}" rel="stylesheet" type="text/css">
+    {{--<link href="{{ elixir('css/all.css') }}" rel="stylesheet" type="text/css">--}}
+    <link href="/css/all.css" rel="stylesheet" type="text/css">
 
 </head>
 <body>
@@ -25,7 +26,8 @@
 </div>
 
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-<script src="{{ elixir('js/all.css') }}"></script>
+{{--<script src="{{ elixir('js/all.css') }}"></script>--}}
+<script src="/js/all.js"></script>
 
 <script>
 
